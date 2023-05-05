@@ -71,8 +71,6 @@ const Artworks: React.FC = () => {
     return <main className="mainContent">{error}</main>;
   }
 
-  console.log(artworks);
-
   return (
     <main className="mainContent">
       <div className="artworksMainWrapper">

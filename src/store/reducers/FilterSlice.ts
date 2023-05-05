@@ -30,7 +30,7 @@ const filterSlice = createSlice({
     },
     removeFilter(state, action: PayloadAction<ActionFilterType>) {
       state.filterStyles = state.filterStyles.filter(
-        (el) => el != action.payload
+        (el) => el !== action.payload
       );
       state[action.payload] = false;
     },

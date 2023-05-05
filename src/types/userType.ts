@@ -13,6 +13,7 @@ export interface userPayloadType {
   name: string;
   email: string;
   imageUrl: string;
+  picture?: string;
   artworks: ArtworkType[];
 }
 

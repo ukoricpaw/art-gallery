@@ -1,6 +1,6 @@
 import React, { FC } from "react";
-import GoogleLogin from "react-google-login";
-import { gapi } from "gapi-script";
+import { GoogleLogin } from "@react-oauth/google";
+import { userPayloadType } from "../types/userType";
 import { useAppDispatch } from "../hooks/reduxHooks";
 import { setUserAuth } from "../store/action-creators/setUserAuth";
 import { useNavigate } from "react-router-dom";
@@ -10,14 +10,7 @@ const Login: FC = () => {
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
   const authTo = (success: any) => {
-    gapi.load("client:auth2", () => {
-      gapi.client.init({
-        clientId: process.env.REACT_APP_GOOGLE_API_TOKEN,
-        plugin_name: "chat",
-      });
-    });
-    console.log(success);
-    dispatch(setUserAuth(success.profileObj));
+    dispatch(setUserAuth(success.credential));
     navigate("/");
   };
 
@@ -28,11 +21,8 @@ const Login: FC = () => {
         <div className="LoginContainer">
           <div className="LoginTitle">art-gallery</div>
           <GoogleLogin
-            className="signButton"
-            clientId={process.env.REACT_APP_GOOGLE_API_TOKEN}
             onSuccess={authTo}
-            onFailure={() => alert("Произошла ошибка")}
-            cookiePolicy="single_host_origin"
+            onError={() => alert("Произошла ошибка")}
           />
         </div>
       </div>
