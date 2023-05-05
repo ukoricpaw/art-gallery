@@ -1,0 +1,97 @@
+.artwork-img {
+  width: 100%;
+  height: 250px;
+}
+
+.noartworksDiv,
+.artworkCard {
+  width: 250px;
+  height: 380px;
+  padding: 5px;
+}
+
+.artwork-img__url {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.artworks-wrapper {
+  padding: 30px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 30px;
+  animation: shadow 1s ease-in-out;
+}
+
+@keyframes shadow {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.artworkCard {
+  box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.25);
+  background-color: var(--white-color);
+  cursor: pointer;
+}
+
+.artwork-description {
+  padding: 10px;
+}
+
+.artwork-name {
+  width: 100%;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.artwork-price {
+  padding-top: 18px;
+  display: inline-block;
+  font-size: 15px;
+  font-weight: 700;
+}
+.artwork-size {
+  padding-left: 30px;
+  display: inline-block;
+  font-size: 10px;
+}
+
+.artwork-quality {
+  padding-top: 20px;
+  font-size: 15px;
+  font-weight: 400;
+}
+
+@media (max-width: 1024px) {
+  .artworks-wrapper {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .inputArtworkPage {
+    justify-content: center;
+  }
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1300px) {
+  .artworks-wrapper {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .inputArtworkPage {
+    justify-content: center;
+  }
+}
+
+.inputArtworkPage {
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+  margin-top: 25px;
+  margin-left: 30px;
+}

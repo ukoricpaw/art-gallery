@@ -1,0 +1,36 @@
+.checkBOX {
+  margin-top: 25px;
+  padding: 50px 20px 400px;
+  border-radius: 15px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+  box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.25);
+  background-color: var(--white-color);
+  animation: transform 0.5s ease-in;
+}
+
+.checkbox {
+  width: 15px;
+  display: inline-block;
+  margin-left: 10px;
+}
+
+.checkboxWrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+@keyframes transform {
+  from {
+    transform: translateY(100px);
+    opacity: 0.1;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
