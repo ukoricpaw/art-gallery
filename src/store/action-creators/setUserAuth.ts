@@ -9,7 +9,6 @@ export const setUserAuth = (credentials: string) => {
     try {
       dispatch(setUser());
       const profileObj: userPayloadType = jwtDecode(credentials);
-      console.log(profileObj);
       let response = await api.get<userPayloadType>(
         `users/byEmail?email=${profileObj.email}`
       );
